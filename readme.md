@@ -17,6 +17,22 @@ To uninstall:
 ---
 `sudo make uninstall`
 
+Usage
+---
+```
+thumctl <options> where <options> is one or more of the following:
+-H print this message
+-V print THUM library version
+-v use verbose output
+-f display temperatures in degrees F
+-c display temperatures in degrees C
+-t take a temperature reading
+-h take a relative humidity reading
+-d take a dew point reading
+-s take a switch reading
+-2 take a switch reading from switch 2 -3 take a switch reading from switch 3 -x take an external temperature reading -i take an IR proximity reading
+-u take an ultrasonic reading
+```
 
 Original instructions
 -----------------
