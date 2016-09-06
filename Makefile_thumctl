@@ -1,9 +1,0 @@
-# Makefile for thumctl
-# $Revision: 1.2 $
-# $Name:  $
-# $Date: 2006/09/17 21:40:53 $
-
-thumctl:
-	gcc -Wall -w -o thumctl thumctl.c -lTHUM
-clean:
-	rm -rf thumctl

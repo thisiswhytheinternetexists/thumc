@@ -1,7 +1,22 @@
 THUM with Raspberry Pi
 =======================
+This application is provided by Practical Design Group for use with their THUM sensor. I've modified the Makefile to work on my recent version of Raspbian, as the provided Makefile did not work for me.
+
 Retrieved from: http://practicaldesign.com/index.php/THUM/thumraspberrypi.html
 See also: http://practicaldesign.com/images/stories/pdf/Linuxbrochure.pdf
+
+To build:
+---
+`make all`
+
+To install:
+---
+`sudo make install`
+
+To uninstall:
+---
+`sudo make uninstall`
+
 
 Original instructions
 -----------------
@@ -22,43 +37,6 @@ GNU/Linux
 ```
 
 ```bash
-root@raspberrypi:~# tar -zxvf thum.pi.src.tar.gz
-thum-src/
-thum-src/THUM.c
-thum-src/thumchk.conf
-thum-src/libTHUM.so.1
-thum-src/thumctl.c
-thum-src/thumctl
-thum-src/Makefile
-thum-src/thumchk.pl
-thum-src/THUM.h
-thum-src/Makefile_thumctl
-thum-src/THUM.o
-```
-
-```bash
-root@raspberrypi:~# cd thum-src
-```
-
-```bash
-root@raspberrypi:~/thum-src# make all
-gcc -fPIC -g -c -Wall THUM.c
-THUM.c: In function GetVersion:
-THUM.c:1000:29: warning: operation on i may be undefined
-[-Wsequence-point]
-gcc -shared -Wl,-soname,libTHUM.so.1 -o libTHUM.so.1 THUM.o -lc -lm
-```
-
-```bash
-root@raspberrypi:~/thum-src# make install
-cp -f libTHUM.so.1 /usr/lib
-ln -sf /usr/lib/libTHUM.so.1 /usr/lib/libTHUM.so
-/sbin/ldconfig
-root@raspberrypi:~/thum-src# thumc
-thumchk.pl  thumctl
-```
-
-```bash
 root@raspberrypi:~/thum-src# thumctl
 1/26/2013 15:17:15 23.258900 C 27.625240 3.556923 C 1.000000 0.010000 C
 19.000000 1.000000
@@ -76,4 +54,6 @@ Taking relative humidity reading
 1/26/2013 15:23:06 74.712000 F 25.570978
 ```
 
-I take (@djflix) take no credit for the original code or instructions. Only commits and changes from now on can be accredited to me.
+Disclaimer
+---------------
+I (@djflix) take take no credit for the original code or instructions. Original code (first commit) provided by Practical Design Group.
