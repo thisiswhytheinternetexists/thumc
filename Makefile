@@ -16,11 +16,13 @@ thumctl:
 install:
 	cp -f libTHUM.so.1 /usr/lib
 	ln -sf /usr/lib/libTHUM.so.1 /usr/lib/libTHUM.so
+	cp thumctl /usr/local/bin/thumctl
 	/sbin/ldconfig
 
 uninstall:
 	rm -f /usr/lib/libTHUM.so
 	rm -f /usr/lib/libTHUM.so.1
+	rm -f /usr/local/bin/thumctl
 	/sbin/ldconfig
 
 clean:
